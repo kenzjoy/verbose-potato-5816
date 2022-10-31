@@ -86,7 +86,8 @@ RSpec.describe 'customer show page', type: :feature do
         kenz.items << sourdough
 
         visit "/customers/#{nick.id}"
-
+        save_and_open_page
+        
         fill_in "Add an item to #{nick.name}'s grocery list:", with: 'Steak' 
 
         click_button('Submit')

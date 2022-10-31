@@ -3,3 +3,15 @@
 <% @customer.items.each do |item| %>
   <li>Item: <%= item.name %>, Price: $<%= item.price %>, Pickup At: <%= item.supermarket.name %></li>
 <% end %>
+<p>--------------------------------------------</p>
+<b>Add an item to <%= @customer.name %>'s grocery list:</b>
+<%= form_with url: "/customers/#{@customer.id}", method: :get, local: true do |form| %>
+  <%= form.label "Item:" %>
+  <%= form.text_field :name %>
+  <%= button_to "Submit", { add_item: item.id } %>
+<% end %>
+<% @customer.items.each do |item| %>
+  <% if @customer.items.include?(item) %>
+    
+  <% end %>
+<% end %>
