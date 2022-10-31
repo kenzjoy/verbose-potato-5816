@@ -1,0 +1,5 @@
+<h3>Customer Name: <%= @customer.name %></h3>
+<b><%= @customer.name %>'s Shopping List:</b><br>
+<% @customer.items.each do |item| %>
+  <li>Item: <%= item.name %>, Price: $<%= item.price %>, Pickup At: <%= item.supermarket.name %></li>
+<% end %>
